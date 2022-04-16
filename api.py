@@ -36,10 +36,12 @@ def phonebook(num):
     return numb_book
 
 
-res = clearing_text()
+if __name__ == '__main__':
 
-result = phonebook(res)
-ascending_numb = sorted(result)
-print(f"ascending {ascending_numb}")
-print(f"not sorted {result}")
-# +7 (812) 123-4567
+    res = clearing_text()
+
+    result = phonebook(res)
+    ascending_numb = sorted(result)
+    print(f"ascending {ascending_numb}")
+    print(f"not sorted {result}")
+    # +7 (812) 123-4567
