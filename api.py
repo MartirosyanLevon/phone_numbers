@@ -29,7 +29,9 @@ def clearing_text():
 def phonebook(num):
     numb_book = []
     for el in num:
-        if len(el) > 9 and len(el) < 12:
+        if len(el) > 9 and len(el) < 11:
+            my_num = f"+7 (812) {el[4:7]}-{el[6:]}"
+        if len(el) > 10 and len(el) < 12:
             my_num = f"+7 (812) {el[5:8]}-{el[7:]}"
             numb_book.append(my_num)
 
