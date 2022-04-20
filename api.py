@@ -1,8 +1,6 @@
 import re
 from glob import glob
 
-files = glob("files/*")
-
 
 def clearing_text():
     f = (x for x in files)
@@ -12,16 +10,14 @@ def clearing_text():
             with open(next(f), 'r') as file:
                 num = re.sub("[-a-z '. ()\n +A-Z]", "", str(file.read()))
                 num = num.split(',')
-                for i in num:
-                    if i.isdigit():
-                        lst.append(i)
+                for j in num:
+                    if j.isdigit():
+                        lst.append(j)
                     else:
                         continue
 
         except FileNotFoundError:
             print('not found')
-        finally:
-            file.closed
 
     return lst
 
@@ -39,9 +35,9 @@ def phonebook(num):
 
 
 if __name__ == '__main__':
+    files = glob("files/*")
 
     res = clearing_text()
-
     result = phonebook(res)
     ascending_numb = sorted(result)
     print(f"ascending {ascending_numb}")
